@@ -1,0 +1,68 @@
+﻿body {
+    display:flex;
+    flex-direction:column;
+    font-family: Arial;
+    font-size: 20px;
+    min-height: 100vh
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    align-items: center;
+    background-color: cornflowerblue;
+}
+
+logoLabel {
+    cursor: default;
+    font-size: 30px;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+searchBlock {
+    margin-left: 20px;
+    min-width: fit-content;
+}
+
+accountBlock {
+    margin-left: auto;
+    margin-right: 12px;
+}
+
+contentBlock{
+    display:flex;
+    flex-direction:row;
+    min-height: 90vh;
+}
+
+leftSidebar {
+    min-width: 15vw;
+    background-color: cornflowerblue;
+    border-right: 1px solid black;
+    font-size: 13px;
+    padding-top: 30px;
+}
+
+sidebarButton {
+    background-color: #f0f0f0;
+    padding: 6px;
+    font-weight: bold;
+    border: 1px solid;
+    cursor: default;
+}
+
+.leftSidebarButton {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+contentTable{
+    margin:auto;
+}
+
+rightSidebar{
+    width: 15vw;
+}

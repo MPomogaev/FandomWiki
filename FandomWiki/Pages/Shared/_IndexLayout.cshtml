@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "_Layout";
+}
+<leftSidebar>
+    <sidebarButton class="leftSidebarButton" onclick="window.location.href='@Url.Page("/CreateCommunity")'">
+        создать сообщество
+    </sidebarButton>
+</leftSidebar>
+<contentTable>
+    @RenderBody()
+</contentTable>
+<rightSidebar>
+</rightSidebar>

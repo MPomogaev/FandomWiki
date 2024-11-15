@@ -5,7 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<DatabaseContext>(options => options.UseNpgsql());
+var host = Host.CreateDefaultBuilder().Build();
+var config = host.Services.GetRequiredService<IConfiguration>();
+builder.Services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(config.GetConnectionString("FandomWiki")));
+builder.Services.AddScoped<CommunityRepository>();
 
 var app = builder.Build();
 

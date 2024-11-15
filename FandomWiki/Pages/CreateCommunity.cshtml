@@ -3,3 +3,21 @@
 @{
     Layout = "_IndexLayout";
 }
+<link rel="stylesheet" href="~/css/createCommunity.css" asp-append-version="true" />
+<createForm>
+    <form method="post">
+        <div>
+            <label asp-for="Name">Название</label><br />
+            <input asp-for="Name"  class="name"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Description">Описание</label><br />
+            <textarea asp-for="Description" class="description"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <button type="submit">Создать</button>
+    </form>
+</createForm>

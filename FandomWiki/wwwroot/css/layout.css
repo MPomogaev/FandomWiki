@@ -39,6 +39,8 @@ contentBlock{
 }
 
 leftSidebar {
+    display: flex;
+    flex-direction: column;
     min-width: 15vw;
     background-color: cornflowerblue;
     border-right: 1px solid black;
@@ -52,11 +54,13 @@ sidebarButton {
     font-weight: bold;
     border: 1px solid;
     cursor: default;
+    white-space: nowrap;
 }
 
 .leftSidebarButton {
-    margin-left: 20px;
+    margin: auto;
     margin-top: 10px;
+    margin-bottom: 0px;
 }
 
 contentTable{

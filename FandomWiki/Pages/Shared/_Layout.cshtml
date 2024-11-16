@@ -13,8 +13,10 @@
             FandomWiki
         </logoLabel>
         <searchBlock>
-            <input type="text" placeholder="выберите сообщество"/>
-            <input type="button" value="найти"/>
+            <form method="post" asp-page="CommunitySearchResult">
+                <input type="text" name="SearchLine" placeholder="выберите сообщество" />
+                <input type="submit" value="найти" />
+            </form>
         </searchBlock>
         <accountBlock>
             <input type="button" value="войти"/>

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FandomWiki", "FandomWiki\FandomWiki.csproj", "{FF5F323D-DD07-4BDA-88FF-89BABF81469D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{3FE12BC0-2E62-488E-B977-4E70D8DC732D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{3FE12BC0-2E62-488E-B977-4E70D8DC732D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FF5F323D-DD07-4BDA-88FF-89BABF81469D} = {FF5F323D-DD07-4BDA-88FF-89BABF81469D}
 	EndProjectSection

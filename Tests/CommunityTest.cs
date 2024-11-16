@@ -1,9 +1,8 @@
 using FandomWiki.Database;
+using FandomWiki.Pages;
 
 namespace Tests {
     public class CommunityTest {
-        const string connectionStr = "Host=localhost;Port=5432;Database=TestFandomWiki;Username=postgres;Password=root";
-        
         private CommunityRepository GetTestRepository() {
             return new(TestDatabase.GetTestDatabase());
         }
@@ -55,6 +54,35 @@ namespace Tests {
             Assert.Null(community);
         }
 
+        [Fact]
+        public void FindExistingCommunityByName() {
+            var rep = GetTestRepository();
+            rep.Add(new() { Name = "1test", Description = "test1" });
+            rep.Add(new() { Name = "123test", Description = "test2" });
+            rep.Add(new() { Name = "12test", Description = "test3" });
+            var firstSearch = rep.Search("1").ToList();
+            Assert.NotNull(firstSearch);
+            Assert.Equal(firstSearch.Count, 3);
+            var secondSearch = rep.Search("123").ToList();
+            Assert.NotNull(secondSearch);
+            Assert.Equal(secondSearch.Count, 1);
+            var community = secondSearch.First();
+            Assert.Equal(community.Name, "123test");
+            Assert.Equal(community.Description, "test2");
+        }
+
+        [Fact]
+        public void CreateCommunityPost() {
+            var rep = GetTestRepository();
+            var page = new CreateCommunityModel(null, rep);
+            page.Name = "name";
+            page.Description = "descr";
+            page.OnPost();
+            var community = rep.Find(1);
+            Assert.NotNull(community);
+            Assert.Equal("name", community.Name);
+            Assert.Equal("descr", community.Description);
+        }
 
     }
 }

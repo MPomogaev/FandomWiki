@@ -26,7 +26,7 @@ namespace FandomWiki.Pages {
             }
             Community newCommunity = new() { Name = Name, Description = Description };
             _repository.Add(newCommunity);
-            _logger.LogInformation("created new community, id = " + newCommunity.Id);
+            _logger?.LogInformation("created new community, id = " + newCommunity.Id);
             return RedirectToPage("Index");
         }
     }

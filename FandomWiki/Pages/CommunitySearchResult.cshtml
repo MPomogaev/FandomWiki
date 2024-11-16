@@ -1,0 +1,11 @@
+﻿@page
+@model FandomWiki.Pages.CommunitySearchResultModel
+@{
+    Layout = "_IndexLayout";
+}
+
+<div>
+    @foreach(var community in Model.Communities) {
+        <label>@community.Name</label>
+    }
+</div>

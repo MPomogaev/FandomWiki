@@ -1,4 +1,7 @@
-﻿namespace FandomWiki.Database {
+﻿using FandomWiki.Pages;
+using Microsoft.EntityFrameworkCore;
+
+namespace FandomWiki.Database {
 
     public class CommunityRepository {
 
@@ -19,6 +22,12 @@
 
         public IEnumerable<Community> GetAll() {
             return _context.Community;
+        }
+
+        public IEnumerable<Community> Search(string name) {
+            name = name.ToLower();
+            return _context.Community
+                .Where(c => EF.Functions.Like(c.Name.ToLower(), name + "%"));
         }
     }
 }

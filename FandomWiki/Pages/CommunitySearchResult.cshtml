@@ -4,8 +4,13 @@
     Layout = "_IndexLayout";
 }
 
-<div>
+<link rel="stylesheet" href="~/css/communitySearchResult.css" asp-append-version="true" />
+<searchResultTable>
     @foreach(var community in Model.Communities) {
-        <label>@community.Name</label>
+        <searchResultBlock>
+            <communityName>@community.Name</communityName>
+            <br />
+            <communityDescription>@community.Description</communityDescription>
+        </searchResultBlock>
     }
-</div>
+</searchResultTable>

@@ -1,8 +1,6 @@
 using FandomWiki.Database;
-using FandomWiki.Pages.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace FandomWiki.Pages {
     public class CommunitySearchResultModel: PageModel {

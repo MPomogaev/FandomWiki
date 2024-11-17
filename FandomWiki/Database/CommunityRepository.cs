@@ -1,5 +1,4 @@
-﻿using FandomWiki.Pages;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace FandomWiki.Database {
 
